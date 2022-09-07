@@ -1,5 +1,5 @@
 using Serilog;
-using Hotel.API.data;
+using Hotel.API.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
