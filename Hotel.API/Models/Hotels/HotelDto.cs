@@ -1,8 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace HotelListing.API.Data
+﻿
+namespace HotelListing.API.Models.Hotels
 {
-    public class Hotel
+    public class HotelDto
     {
         public int Id { get; set; }
 
@@ -12,9 +11,6 @@ namespace HotelListing.API.Data
 
         public double Rating { get; set; }
 
-        [ForeignKey(nameof(CountryId))]
         public int CountryId { get; set; }
-
-        public Country Country { get; set; }
     }
 }

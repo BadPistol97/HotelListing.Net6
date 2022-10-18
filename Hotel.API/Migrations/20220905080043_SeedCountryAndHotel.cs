@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Hotel.API.Migrations
+namespace HotelListing.API.Migrations
 {
     public partial class SeedCountryAndHotel : Migration
     {

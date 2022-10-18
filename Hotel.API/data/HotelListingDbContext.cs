@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
 
-namespace Hotel.API.Data
+namespace HotelListing.API.Data
 {
     public class HotelListingDbContext: DbContext
     {

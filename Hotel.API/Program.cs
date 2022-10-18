@@ -1,6 +1,9 @@
 using Serilog;
-using Hotel.API.Data;
+using HotelListing.API.Data;
 using Microsoft.EntityFrameworkCore;
+using HotelListing.API.Configurations;
+using Hotel.API.Contracts;
+using Hotel.API.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +30,12 @@ builder.Host.UseSerilog((context,loggerConfig) =>
 {
     loggerConfig.WriteTo.Console().ReadFrom.Configuration(context.Configuration); // context.Configuration = config file of project (appsetting.json)
 });
+
+builder.Services.AddAutoMapper(typeof(MapperConfig));
+
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
+builder.Services.AddScoped<ICountriesRepository, CountriesRepository>();
 
 var app = builder.Build();
 
