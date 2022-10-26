@@ -11,7 +11,7 @@ namespace HotelListing.API.Data
 
         }
 
-        public DbSet<Hotel> HotelListings { get; set; }
+        public DbSet<Inn> HotelListings { get; set; }
 
         public DbSet<Country> Countries { get; set; }
 
@@ -41,8 +41,8 @@ namespace HotelListing.API.Data
 
             );
 
-            modelBuilder.Entity<Hotel>().HasData(
-                new Hotel
+            modelBuilder.Entity<Inn>().HasData(
+                new Inn
                 {
                     Id = 1,
                     Name = "Sandals Resort and Spa",
@@ -51,7 +51,7 @@ namespace HotelListing.API.Data
                     Rating = 4.5
 
                 },
-                new Hotel
+                new Inn
                 {
                     Id = 2,
                     Name = "Comfort Suites",
@@ -60,7 +60,7 @@ namespace HotelListing.API.Data
                     Rating = 4.5
 
                 },
-                new Hotel
+                new Inn
                 {
                     Id = 3,
                     Name = "Grand Palldium",
