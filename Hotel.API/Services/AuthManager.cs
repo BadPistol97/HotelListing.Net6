@@ -36,15 +36,15 @@ namespace Hotel.API.Services
 
             ApiUser user = _mapper.Map<ApiUser>(userDto);
 
-            _user.UserName = user.Email;
+            user.UserName = user.Email;
 
-            _user.PasswordHash = _userManager.PasswordHasher.HashPassword(_user,userDto.Password);
+            //_user.PasswordHash = _userManager.PasswordHasher.HashPassword(_user,userDto.Password);
 
-            var result = await _userManager.CreateAsync(_user);
+            var result = await _userManager.CreateAsync(user);
 
             if (result.Succeeded)
             {
-                await _userManager.AddToRoleAsync(_user, IsAdmin ? "Administrator":"User");
+                await _userManager.AddToRoleAsync(user, IsAdmin ? "Administrator":"User");
 
             }
 
