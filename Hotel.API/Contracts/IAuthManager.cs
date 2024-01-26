@@ -5,6 +5,12 @@ namespace Hotel.API.Contracts
 {
     public interface IAuthManager
     {
-        Task<IEnumerable<IdentityError>> Register(ApiUserDto userDto); 
+        Task<IEnumerable<IdentityError>> Register(ApiUserDto userDto, bool IsAdmin = true);
+
+        Task<AuthResponseDto> Login(LoginDto loginDto);
+
+        Task<string> GenerateRefreshToken();
+
+        Task<AuthResponseDto> VerifyRefreshToken(AuthResponseDto request);
     }
 }
